@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Analysis Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Career Analysis Results</h1>
+
+    {% if jobs %}
+    {% for job in jobs %}
+    <div class="card">
+      <h2>{{ job.career }}</h2>
+      <p><strong>Skill Match %:</strong> {{ job.match_percent }}%</p>
+
+      <p><strong>Matched Skills:</strong>
+        {% if job.matched %}
+        {{ job.matched | join(", ") }}
+        {% else %}
+        None
+        {% endif %}
+      </p>
+
+      <p><strong>Missing Skills:</strong>
+        {% if job.missing %}
+        {{ job.missing | join(", ") }}
+        {% else %}
+        None
+        {% endif %}
+      </p>
+
+      {% if job.courses %}
+      <p><strong>Recommended Courses:</strong></p>
+      <ul>
+        {% for course in job.courses %}
+        <li><a href="{{ course }}" target="_blank">{{ course }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <!-- Charts Section -->
+    <div class="card">
+      <h2>Career Match Overview</h2>
+
+      <div class="charts-container">
+        {% for job in jobs %}
+          <div class="chart-card">
+            <h3>{{ job.career }}</h3>
+            <canvas id="chart-{{ loop.index }}"></canvas>
+          </div>
+        {% endfor %}
+      </div>
+
+      <script>
+        {% for job in jobs %}
+          new Chart(document.getElementById('chart-{{ loop.index }}'), {
+            type: 'doughnut',
+            data: {
+              labels: ['Matched Skills', 'Missing Skills'],
+              datasets: [{
+                data: [{{ job.matched|length }}, {{ job.missing|length }}],
+                backgroundColor: ['#00d8ff', '#ff4d4d']
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: { labels: { color: '#fff' } }
+              }
+            }
+          });
+        {% endfor %}
+      </script>
+    </div>
+    {% else %}
+      <p>No skills detected. Please try uploading a resume or entering skills manually.</p>
+    {% endif %}
+
+    <a href="/" class="btn">Go Back</a>
+  </div>
+
+  <form id="downloadForm" method="post" action="/download_report">
+    <button type="button" class="btn" onclick="downloadReport()">Download Report as PDF</button>
+  </form>
+
+  <script>
+function downloadReport() {
+  const jobs = {{ jobs|tojson }};
+  
+  fetch("/download_report", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ jobs: jobs })
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Failed to generate PDF");
+    }
+    return response.blob();
+  })
+  .then(blob => {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Career_Report.pdf";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.URL.revokeObjectURL(url);
+  })
+  .catch(error => alert(error));
+}
+</script>
+
+
+</body>
+</html>

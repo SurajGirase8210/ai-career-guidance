@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">i
+<head>
+  <meta charset="UTF-8">
+  <title>AI Career Guidance</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Career Guidance & Skill Gap Analyzer</h1>
+    <p class="subtitle">You can either upload your resume OR enter your skills manually:</p>
+
+    <!-- Upload Resume Form -->
+    <form method="POST" action="/analyze" enctype="multipart/form-data" class="form-block">
+      <label for="resume"><strong>Upload Resume (PDF/DOCX):</strong></label><br>
+      <input type="file" name="resume" accept=".pdf,.docx" class="file-input">
+      <br>
+      <button type="submit" class="btn">Analyze from Resume</button>
+    </form>
+
+    <div class="divider">OR</div>
+
+    <!-- Manual Entry Form -->
+    <form method="POST" action="/analyze" class="form-block">
+      <label for="skills"><strong>Enter Your Skills Manually:</strong></label><br>
+      <textarea name="skills" rows="4" placeholder="e.g., Python, SQL, Machine Learning"></textarea>
+      <br>
+      <button type="submit" class="btn">Analyze from Skills</button>
+    </form>
+  </div>
+  
+
+</body>
+</html>

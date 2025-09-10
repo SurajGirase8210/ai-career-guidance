@@ -1,0 +1,11 @@
+Flask
+scikit-learn
+matplotlib
+pandas
+numpy
+python-docx
+sentence-transformers
+torch
+
+
+pip install -r requirements.txt

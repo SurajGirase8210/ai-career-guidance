@@ -1,0 +1,60 @@
+skill,course_link
+Python,https://www.coursera.org/specializations/python
+Machine Learning,https://www.coursera.org/learn/machine-learning
+Statistics,https://www.khanacademy.org/math/statistics-probability
+SQL,https://www.coursera.org/learn/sql-for-data-science
+Data Visualization,https://www.coursera.org/specializations/data-visualization
+Pandas,https://www.datacamp.com/courses/pandas-foundations
+NumPy,https://www.datacamp.com/courses/intro-to-numpy
+HTML,https://www.codecademy.com/learn/learn-html
+CSS,https://www.codecademy.com/learn/learn-css
+JavaScript,https://www.coursera.org/specializations/javascript
+React,https://www.udemy.com/course/react-the-complete-guide
+Node.js,https://www.udemy.com/course/the-complete-nodejs-developer-course-2
+Git,https://www.udemy.com/course/git-and-github-bootcamp
+Deep Learning,https://www.coursera.org/specializations/deep-learning
+Neural Networks,https://www.coursera.org/learn/neural-networks-deep-learning
+TensorFlow,https://www.coursera.org/learn/introduction-tensorflow
+NLP,https://www.coursera.org/specializations/natural-language-processing
+PyTorch,https://www.udemy.com/course/pytorch-for-deep-learning
+Networking,https://www.coursera.org/specializations/computer-networking
+Linux,https://www.udemy.com/course/linux-mastery
+Cryptography,https://www.coursera.org/learn/crypto
+Firewalls,https://www.udemy.com/course/network-security
+Risk Assessment,https://www.coursera.org/learn/risk-management
+Security Tools,https://www.coursera.org/specializations/cybersecurity
+AWS,https://www.coursera.org/specializations/aws-fundamentals
+Azure,https://learn.microsoft.com/en-us/training/azure
+Docker,https://www.udemy.com/course/docker-mastery
+Kubernetes,https://www.coursera.org/learn/google-kubernetes-engine
+Cloud Security,https://www.coursera.org/learn/cloud-security
+Java,https://www.udemy.com/course/java-the-complete-java-developer-course
+Kotlin,https://www.udemy.com/course/kotlin-for-beginners
+Swift,https://developer.apple.com/learn/curriculum
+Android,https://developer.android.com/courses
+iOS,https://www.udemy.com/course/ios-13-app-development-bootcamp
+Flutter,https://flutter.dev/learn
+CI/CD,https://www.coursera.org/learn/devops-cicd
+Jenkins,https://www.udemy.com/course/jenkins-from-zero-to-hero
+GitHub Actions,https://www.udemy.com/course/github-actions
+Excel,https://www.udemy.com/course/excel-excel-excel
+Communication,https://www.coursera.org/learn/wharton-communication-skills
+Problem Solving,https://www.coursera.org/learn/problem-solving-skills
+Power BI,https://www.coursera.org/learn/power-bi-data-visualization
+Hadoop,https://www.udemy.com/course/hadoop-tutorial
+Spark,https://www.coursera.org/learn/introduction-apache-spark
+ETL,https://www.udemy.com/course/etl-testing
+Data Warehousing,https://www.coursera.org/learn/data-warehousing
+Big Data,https://www.coursera.org/specializations/big-data
+Wireframing,https://www.coursera.org/learn/ux-design-fundamentals
+Prototyping,https://www.coursera.org/learn/prototyping-design
+Figma,https://www.coursera.org/projects/figma-ux-ui
+Adobe XD,https://www.udemy.com/course/ui-ux-adobe-xd
+User Research,https://www.coursera.org/learn/user-research
+Design Thinking,https://www.coursera.org/learn/uva-darden-design-thinking-innovation
+C++,https://www.udemy.com/course/beginning-c-plus-plus-programming
+Unity,https://learn.unity.com/
+Unreal Engine,https://dev.epicgames.com/community/learning
+Game Design,https://www.coursera.org/specializations/game-design
+Graphics Programming,https://www.udemy.com/course/graphics-programming
+Scikit-learn,https://www.coursera.org/learn/machine-learning-with-python
