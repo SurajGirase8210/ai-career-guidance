@@ -1,8 +1,7 @@
 Flask
-scikit-learn
-matplotlib
-pandas
-numpy
 python-docx
-sentence-transformers
-torch
+PyPDF2
+pandas
+matplotlib
+reportlab
+gunicorn
